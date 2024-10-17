@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+
+:root{
+  --main-color:#31b572;
+  --second-color:#7451eb;
+  --white-color:white;
+  --black-color:#000;
+  --debeug:tomato;
+
+  --item-name:var(--main-color);
+  --item-price:var(--black-color);
+  
+  --body-font-size:1.2rem;
+  --body-font-family:'Josefin Sans';
+
+  --radius:10px;
+}
+
+
+/* UTILS */
+body{
+  margin:0;
+  padding:0;
+  font-family: var(--body-font-family);
+  font-size:var(--body-font-size);
+  color:var(--black-color)
+}
+
+.core{
+  width:100%;
+  display: flex;
+  flex-flow: column nowrap;
+  /* justify-content: space-between; */
+  align-items: center;
+  min-height:100vh;
+
+}
+
+a {
+  text-decoration: none;
+  color:unset
+}
+
+.debeug{
+  color:tomato
+} 
+.debeug-alt{
+  color:blue
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.extra-link{
+  
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-main {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-banner{
+
+  background:var(--main-color);
+  padding:2rem;
+  text-align: center;
+  color:var(--white);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

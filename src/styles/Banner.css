@@ -1,0 +1,20 @@
+
+.top-banner {
+  --gap:3dvw;
+  width:100%;
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2rem 1rem;
+  column-gap: var(--gap);
+  background-color: var(--main-color);
+}
+
+.logo-lmj {
+  --circle:40px;
+  max-width:90px;
+  height: auto;;
+  padding:.85rem;
+  border-radius:var(--circle);
+  background-color: white;
+}
