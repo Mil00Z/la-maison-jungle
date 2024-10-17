@@ -66,6 +66,20 @@ a {
   
 }
 
+.block {
+  --color:var(--black-color);
+  --block-background:var(--white-color);
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding:2rem;
+  margin-block:1rem;
+  color:var(--color);
+  background-color: var(--block-background);
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -1,6 +1,30 @@
 
+.shopping-list{
+
+
+}
+
+.link-category{
+text-decoration-color: var(--main-color);
+transition: all 0.3s ease-in-out;
+}
+
+.link-category:hover{
+  text-decoration-line: overline;
+}
+
+.plant-list{
+  padding:0;
+  margin: 0;
+}
+
+.categories{
+  
+}
+
 
 li:has(>.hidden,>.category) {
+  width: fit-content;
   list-style-type: none;
   position: relative;
   margin-block:.75rem;
@@ -13,7 +37,7 @@ li:has(>.hidden,>.category) {
 li >.category {
   --op:0;
   position: absolute;
-  right: -80%;
+  right: -110%;
   top: -35px;
   width:fit-content;
   padding: 4px 5px;

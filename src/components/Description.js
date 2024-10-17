@@ -1,9 +1,16 @@
+import Recommandation from './Recommandation';
+import '../styles/Description.css';
+
 const Description = () => {
 
-  let textDesc = 'Ici achetez toutes les plantes dont vous avez toujours voulu !';
-  let emojis ='🌵🌱🎍';
-
-  return (<p data-customer-satisfaction={Math.floor(Math.random() * 100) + `%`}>{textDesc} {emojis}</p>)
+  return (
+    <section className="block reco season">
+      <>
+        <h2 className="description-title"> - Nous recommandons - </h2>
+        <Recommandation />
+      </>
+    </section>
+)
 
 }
 
