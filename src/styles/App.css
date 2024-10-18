@@ -80,6 +80,13 @@ a {
   background-color: var(--block-background);
 }
 
+.block .title{
+  text-decoration-color: var(--underline);
+  text-decoration-style: wavy;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

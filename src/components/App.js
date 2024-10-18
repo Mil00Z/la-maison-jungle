@@ -1,4 +1,5 @@
 import Banner from './Banner';
+import Block from './Block';
 import Footer from './Footer';
 import ShoppingList from '../components/ShoppingList';
 import Cart from './Cart';
@@ -12,6 +13,7 @@ function App() {
   return (
     <>
       <Banner/>
+      <Block/>
       <Cart/>
       <ShoppingList/>
       <Description/>

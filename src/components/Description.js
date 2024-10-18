@@ -6,7 +6,7 @@ const Description = () => {
   return (
     <section className="block reco season">
       <>
-        <h2 className="description-title"> - Nous recommandons - </h2>
+        <h2 className="title description-title "> - Nous recommandons - </h2>
         <Recommandation />
       </>
     </section>

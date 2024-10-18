@@ -1,7 +1,14 @@
 .reco.season {
   --color:var(--white-color);
   --block-background:var(--black-color);
+  --underline:var(--main-color);
 }
 
+.description-title{
+  text-decoration-color: var(--underline);
+  text-decoration-style: wavy;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
 
 

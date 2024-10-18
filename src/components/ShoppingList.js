@@ -57,7 +57,7 @@ const ShoppingList = () => {
       {extractCategories.map((category,index) => {
 
         return (<a href={`https://google.com/search?q=plantes type ${category}`}
-           className="link-category" key={`${category}`}> {category} </a>)
+           className="link-category" key={`${category} - ${index}`}> {category} </a>)
 
         })
 
@@ -70,7 +70,7 @@ const ShoppingList = () => {
           return (<li key={plante.id}>
             {plante.name} {plante.isBestSale && '💥'}
 
-            {plante.isSpecialOffer && (<span className='special-offer'> - en Soldes !</span>)}
+            {plante.isSpecialOffer && (<span className='special-offer'> en Soldes !</span>)}
 
             <div className='category'>{plante.category}</div>
             </li>)
