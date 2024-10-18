@@ -1,0 +1,46 @@
+.block {
+  --op: .75;
+  --color:var(--black-color);
+  --block-background:var(--white-color);
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding:2rem;
+  margin-block:1rem;
+  color:var(--color);
+  background-color: var(--block-background);
+}
+
+.block .title{
+  text-decoration-color: var(--underline);
+  text-decoration-style: wavy;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+
+.block.first {
+  margin-top: 0;
+  height: 45Vh;
+  background-size: cover;
+  background-position: 0px 99%;
+}
+
+.first .title {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:1.65rem;
+  font-weight: bold;
+  background: rgba(255,255,255,var(--op));
+  padding: 0 4rem;
+  border-radius: 12px;
+}
+
+.first .title > i {
+  margin-right:1rem;
+  color:var(--second-color)
+}
+

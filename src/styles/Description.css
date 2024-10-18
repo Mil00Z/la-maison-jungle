@@ -4,11 +4,11 @@
   --underline:var(--main-color);
 }
 
-.description-title{
-  text-decoration-color: var(--underline);
+.description-title {
+  /* text-decoration-color: var(--underline);
   text-decoration-style: wavy;
   text-decoration-thickness: 2px;
-  text-underline-offset: 8px;
+  text-underline-offset: 8px; */
 }
 
 
