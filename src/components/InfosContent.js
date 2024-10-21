@@ -44,7 +44,7 @@ const result = async (path) => {
    return plantListing;
 }
 
-function CareScale(props) {
+export function CareScale(props) {
 
 const scaleValue = props.scaleValue;
 const careType = props.careType;
@@ -57,7 +57,7 @@ const careType = props.careType;
 
       {range.map((elementRange) => {
 
-          return  scaleValue >= elementRange && (<span className='care-scale' key={elementRange}>{scaleType}</span>)
+          return  scaleValue >= elementRange && (<span className='care-scale' data-type={careType} key={elementRange}>{scaleType}</span>)
          })
       }
       </div>
