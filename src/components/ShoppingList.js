@@ -13,7 +13,7 @@ const ShoppingList = () => {
 
     {dataListing.map((plante,index) => {
 
-      return (<PlantItem id={plante.id} planteName={plante.name} planteCover={plante.cover} data-index={index} planteLight={plante.light} planteWater={plante.water}/>)
+      return (<PlantItem key={plante.id} planteName={plante.name} planteCover={plante.cover} data-index={index} planteLight={plante.light} planteWater={plante.water}/>)
 
       })}
       

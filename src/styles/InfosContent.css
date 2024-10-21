@@ -1,3 +1,7 @@
+.infos-content{
+  display:none;
+}
+
 .link-category{
 text-decoration-color: var(--main-color);
 transition: all 0.3s ease-in-out;
