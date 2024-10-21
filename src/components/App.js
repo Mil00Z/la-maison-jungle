@@ -6,6 +6,9 @@ import Cart from './Cart';
 import ShoppingList from './ShoppingList';
 import Description from './Description';
 import FixedBarMarketing from './FixedBarMarketing';
+
+import UncontroledForm from './UncontroledForm';
+import ControledForm from './ControledForm';
 import '../styles/App.css';
 
 
@@ -20,6 +23,8 @@ function App() {
       <InfosContent/>
       <ShoppingList/>
       <Description/>
+      <UncontroledForm/>
+      <ControledForm/>
       <Footer/>
       <FixedBarMarketing/>
     </>
