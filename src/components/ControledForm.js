@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 function ControledForm() {
 
-  const [inputValue, setInputValue] = useState(); 
+  const [inputValue, setInputValue] = useState(''); 
 
   const QuestionForm = (e) => {
 

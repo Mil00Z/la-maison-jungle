@@ -95,7 +95,7 @@ const InfosContent = () => {
         {plantListing.map((plante) =>{
 
           return (<li key={plante.id}>
-            {plante.name} {plante.isBestSale && '💥'}
+            {plante.name} {plante.isBestSale ?? '💥'}
 
             {plante.isSpecialOffer && (<span className='special-offer'> en Soldes !</span>)}
 

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { CareScale } from './InfosContent';  
 import '../styles/PlantItem.css';
 
@@ -6,18 +7,25 @@ const PlantItem = (props) => {
 
   const {planteName,planteCover,planteLight,planteWater} = props;
 
-  let wishText = "Ajouter à mes envies";
+  const [wishText,setTextWish] = useState('Ajouter à mes envies');
 
+ 
   const handleClick = (event) => {
 
     // Change this for better Code With React
     if(event.target.classList.contains('add-wish')){
 
-      event.target.closest('.plant-item').classList.toggle('selected');
- 
-      if (event.target.closest('.plant-item').classList.contains('selected')){
+      let targetItem = event.target.closest('.plant-item');
 
-        wishText = "Retirer de mes envies";
+      targetItem.classList.toggle('selected');
+ 
+      if (targetItem.classList.contains('selected')){
+
+        setTextWish('Retirer de mes envies');
+
+      } else {
+
+        setTextWish('Ajouter à mes envies');
 
       }
 
@@ -29,7 +37,7 @@ const PlantItem = (props) => {
     <article onClick={(event)=> handleClick(event,planteName)} className='plant-item'>
 
         <h3 className="plant-name">{planteName}</h3>
-        <img className='plant-cover' src={`${window.location.origin}${planteCover}`} alt={`Visuel de ${planteName}`} />  
+        <img className='plant-cover' src={`${planteCover}`} alt={`Visuel de ${planteName}`} />  
         <div className="care-type">
           <CareScale careType="water" scaleValue={planteWater}/>
           <CareScale careType="light" scaleValue={planteLight}/>
