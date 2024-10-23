@@ -68,20 +68,38 @@ a {
 }
 
 .btn {
+  --color:var(--white-color);
+  --background:var(--second-color);
   display: inline-flex;
   justify-content: center;
   align-items: center;
   padding:0.5rem 1rem;
   margin-inline:2rem;
+  color:var(--color);
+  background:var(--background);
+  border:none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-go{
-  font-size: 1rem;
-  color:var(--white-color);
-  background:var(--second-color);
-  border:none;
-  border-radius:var(--radius);
+  font-size: 1.1rem;
 }
+
+.btn-opener{
+  font-size: 1.25rem;
+  position: absolute;
+  top:2vh;
+  left:2vh;
+}
+
+.btn-closer{
+  --background:var(--debeug);
+  font-size: 1.25rem;
+}
+  
+
 
 input{
   padding-inline:8px;

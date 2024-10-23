@@ -1,52 +1,33 @@
+import { useState } from 'react';
 import '../styles/Cart.css';
 
 const Cart = () => {
 
-  let cartItems = {
-    'Monsterra': {
-      price:8, 
-      quantity: 1
-    },
-    'Lierre': {
-      price:10,
-       quantity: 1
-    },
-    'Roses': {
-      price:6,
-      quantity: 1
-    },
-    'Bouquet': {
-      price:15,
-      quantity: 1
-    },
-    'Orchidee': {
-      price:20,
-      quantity: 1
-    }
+  const monsteraPrice = 5 ;
+
+  const [cart,setCart] = useState(0);
+  const [isOpen,setIsOpen] = useState(false);
+  
+
+  function cleanCart() {
+    setCart(0);
   }
 
-  let totalPrice = 0;
+  
+  return isOpen ? (<aside className="cart">
+          <button className='btn btn-closer' onClick={() => setIsOpen(false)}> ❌ Fermer ❌</button>
+            <h2>Panier</h2>
+            <div>
+                Monstera : {monsteraPrice}€ (quantité : {cart >= 0 ? cart : 0})
+                <button onClick={() => setCart(cart + 1)}>
+                  Ajouter
+                </button>
 
-
-  return (<aside className="cart" data-items-available={Object.keys(cartItems).length}>
-
-    <ul>
-
-      {Object.keys(cartItems).map((entrie,index) => {
-
-      totalPrice+= cartItems[entrie].price;
-
-    return <li className="cart-item" data-quantity={cartItems[entrie].quantity} key={index}>
-              <span className="item-name">{entrie} :</span>
-              <span className="item-price"> {cartItems[entrie].price} euros</span>
-          </li>
-        }) 
-      }
-
-    </ul>
-    <div className="total-price debeug-1">Total: {totalPrice} euros</div>     
-</aside>)
-
+                <button onClick={() => setCart(cart - 1)}>Enlever</button>
+            </div>
+            <h3>Total : {cart > 0 ? monsteraPrice * cart + '€' : '0€'}</h3>
+            <button className="btn btn-go" onClick={cleanCart}>Vider le panier</button>
+</aside>) : (<button className="btn btn-opener" onClick={() => setIsOpen(true)}> 🛒 Ouvrir</button>);
 
 }
 

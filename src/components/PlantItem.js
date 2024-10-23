@@ -34,7 +34,7 @@ const PlantItem = (props) => {
   }
 
   return (
-    <article onClick={(event)=> handleClick(event,planteName)} className='plant-item'>
+    <article onClick={(event)=> handleClick(event)} className='plant-item'>
 
         <h3 className="plant-name">{planteName}</h3>
         <img className='plant-cover' src={`${planteCover}`} alt={`Visuel de ${planteName}`} />  
