@@ -19,11 +19,11 @@ const Cart = () => {
             <h2>Panier</h2>
             <div>
                 Monstera : {monsteraPrice}€ (quantité : {cart >= 0 ? cart : 0})
-                <button onClick={() => setCart(cart + 1)}>
-                  Ajouter
+                <button className='btn btn-action' onClick={() => setCart(cart + 1)}>
+                +
                 </button>
 
-                <button onClick={() => setCart(cart - 1)}>Enlever</button>
+                <button className='btn btn-action' onClick={() => setCart(cart - 1)}>-</button>
             </div>
             <h3>Total : {cart > 0 ? monsteraPrice * cart + '€' : '0€'}</h3>
             <button className="btn btn-go" onClick={cleanCart}>Vider le panier</button>

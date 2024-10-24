@@ -29,7 +29,6 @@ let errortext = "Format d'input invalide !"
     <label htmlFor="text">Du texte</label>
     <input type='text' name='text' placeholder='Tapez votre merde de texte' onChange={(e)=> CheckValue(e.target.value)} />
     <button type='submit' className="btn btn-go" onClick={()=> alert(inputValue)}>Alarma</button>
-   
   </form> )
 
 }

@@ -98,6 +98,14 @@ a {
   --background:var(--debeug);
   font-size: 1.25rem;
 }
+
+.btn-action{
+  --background:var(--main-color);
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-inline: .55rem;
+}
+  
   
 
 
