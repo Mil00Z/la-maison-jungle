@@ -5,10 +5,9 @@ import '../styles/PlantItem.css';
 
 const PlantItem = (props) => {
 
-  const {planteName,planteCover,planteLight,planteWater} = props;
+  const {planteName,planteCover,planteLight,planteWater,cart, setCart} = props;
 
-  const [wishText,setTextWish] = useState('Ajouter à mes envies');
-
+  const [wishText,setTextWish] = useState('Ajouter à mon panier');
  
   const handleClick = (event) => {
 
@@ -21,11 +20,11 @@ const PlantItem = (props) => {
  
       if (targetItem.classList.contains('selected')){
 
-        setTextWish('Retirer de mes envies');
+        // setTextWish('Retirer de mon panier');
 
       } else {
 
-        setTextWish('Ajouter à mes envies');
+        setTextWish('Ajouter au panier');
 
       }
 
@@ -42,7 +41,7 @@ const PlantItem = (props) => {
           <CareScale careType="water" scaleValue={planteWater}/>
           <CareScale careType="light" scaleValue={planteLight}/>
         </div>
-        <div className="add-wish">{wishText}</div>
+        <button className='btn btn-go add-wish' onClick={() => setCart(cart + 1)}>{wishText}</button>
 
     </article>)
   
