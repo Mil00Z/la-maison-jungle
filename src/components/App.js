@@ -19,8 +19,26 @@ import '../styles/App.css';
 function App() {
 
 //Remonter le state Local de Cart to App pour une plus grande diffusion 
+let cartInit = [
+  {
+    name:'ficus',
+    price: 5,
+    quantity: 1
+  },
+  {
+    name:'aloe',
+    price: 5,
+    quantity: 3
+  },
+  {
+    name:'oilivier',
+    price: 25,
+    quantity: 1
+  }
+]
 
-const [cart,setCart] = useState(0);
+//Init Use State for Cart
+const [cart,setCart] = useState(cartInit);
 
   return (
     <>

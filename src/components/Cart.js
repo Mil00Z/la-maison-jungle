@@ -1,19 +1,23 @@
 import { useState, useRef } from 'react';
+import { plantList } from '../datas/plantList';
 import '../styles/Cart.css';
 
 const Cart = (props) => {
 
-  const {cart,setCart} = props;
-
-  const monsteraPrice = 5 ;
+  const {cart, setCart} = props;
 
   const [isOpen,setIsOpen] = useState(false);
 
+  // Use Ref to target HTML element with React
   const cartLayout = useRef(null);
-  
+
+  let totalCart = cart.reduce((acc,element) => {
+    return acc + element.price * element.quantity
+  },0);
+
 
   function cleanCart() {
-    setCart(0);
+    setCart([]);
   }
 
   function showCart() {
@@ -29,16 +33,22 @@ const Cart = (props) => {
   
   return isOpen ? (<aside className="cart" ref={cartLayout}>
           <button className='btn btn-closer' onClick={() => setIsOpen(false)}> ❌ Fermer ❌</button>
-            <h2>Panier</h2>
-            <div>
-                Monstera : {monsteraPrice}€ (quantité : {cart >= 0 ? cart : 0})
-                {/* <button className='btn btn-action' onClick={() => setCart(cart + 1)}>
+            <h2>Mon Panier</h2>
+            {cart.map((item,index) => {
+              return (
+                <div key={`${item.name}-${index}`} className="cart-item" data-element={item.name}>
+                  <p>{`${item.name.toUpperCase()} x ( ${item.quantity} ) :`}  <span>{item.quantity * item.price} euros </span></p>
+                </div>
+              )
+            })}
+            {/* <button className='btn btn-action' onClick={() => setCart(cart + 1)}>
                 +
-                </button> */}
+              </button> */}
 
-                {/* <button className='btn btn-action' onClick={() => setCart(cart - 1)}>-</button> */}
-            </div>
-            <h3>Total : {cart > 0 ? monsteraPrice * cart + '€' : '0€'}</h3>
+            {/* <button className='btn btn-action' onClick={() => setCart(cart - 1)}>-</button> */}
+          
+            { <h3>Total : {totalCart ? totalCart : 0} {'euros'}</h3> }
+
             <button className="btn btn-go" onClick={cleanCart}>Vider le panier</button>
 </aside>) : (<button className="btn btn-opener" onClick={(e) => showCart()}> 🛒 Ouvrir</button>);
 
