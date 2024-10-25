@@ -5,11 +5,18 @@ import '../styles/PlantItem.css';
 
 const PlantItem = (props) => {
 
-  const {planteName,planteCover,planteLight,planteWater,cart, setCart} = props;
+  const {planteName,plantePrice,planteCover,planteLight,planteWater,cart, setCart} = props;
 
   const [wishText,setTextWish] = useState('Ajouter à mon panier');
  
   const handleClick = (event) => {
+
+      addToCartUI(event);
+      updateCart();
+  
+  }
+
+  function addToCartUI(event){
 
     // Change this for better Code With React
     if(event.target.classList.contains('add-wish')){
@@ -31,6 +38,20 @@ const PlantItem = (props) => {
     }
 
   }
+
+  function updateCart() { 
+
+    let newItem = {
+      name : planteName,
+      price : plantePrice,
+      quantity : 1
+    }
+
+    setCart([...cart,newItem]);
+
+  }
+
+
 
   return (
     <article onClick={(event)=> handleClick(event)} className='plant-item'>

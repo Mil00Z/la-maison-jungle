@@ -12,7 +12,7 @@ const Cart = (props) => {
   const cartLayout = useRef(null);
 
   let totalCart = cart.reduce((acc,element) => {
-    return acc + element.price * element.quantity
+    return acc + (element.price * element.quantity)
   },0);
 
 
@@ -47,7 +47,7 @@ const Cart = (props) => {
 
             {/* <button className='btn btn-action' onClick={() => setCart(cart - 1)}>-</button> */}
           
-            { <h3>Total : {totalCart ? totalCart : 0} {'euros'}</h3> }
+            { <h3>Total : {totalCart} {'euros'}</h3> } 
 
             <button className="btn btn-go" onClick={cleanCart}>Vider le panier</button>
 </aside>) : (<button className="btn btn-opener" onClick={(e) => showCart()}> 🛒 Ouvrir</button>);

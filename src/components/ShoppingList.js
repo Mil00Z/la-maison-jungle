@@ -15,7 +15,7 @@ const ShoppingList = (props) => {
 
     {dataListing.map((plante,index) => {
 
-      return (<PlantItem key={plante.id} planteName={plante.name} planteCover={plante.cover} data-index={index} planteLight={plante.light} planteWater={plante.water} cart={cart} setCart={setCart}/>)
+      return (<PlantItem key={plante.id} planteName={plante.name} planteCover={plante.cover} plantePrice={plante.price} data-index={index} planteLight={plante.light} planteWater={plante.water} cart={cart} setCart={setCart}/>)
 
       })}
       
