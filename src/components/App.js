@@ -31,14 +31,14 @@ let cartInit = [
     quantity: 3
   },
   {
-    name:'oilivier',
+    name:'olivier',
     price: 25,
     quantity: 1
   }
 ]
 
 //Init Use State for Cart
-const [cart,setCart] = useState(cartInit);
+const [cart,setCart] = useState([]);
 
   return (
     <>

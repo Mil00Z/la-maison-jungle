@@ -12,7 +12,7 @@ const PlantItem = (props) => {
   const handleClick = (event) => {
 
       addToCartUI(event);
-      updateCart();
+      updateCart(planteName,plantePrice);
   
   }
 
@@ -23,12 +23,12 @@ const PlantItem = (props) => {
 
       let targetItem = event.target.closest('.plant-item');
 
-      targetItem.classList.toggle('selected');
+      targetItem.classList.add('selected');
  
       if (targetItem.classList.contains('selected')){
 
         // setTextWish('Retirer de mon panier');
-
+        
       } else {
 
         setTextWish('Ajouter au panier');
@@ -39,18 +39,44 @@ const PlantItem = (props) => {
 
   }
 
-  function updateCart() { 
+  function removeToCartUI(event) {
+
+    let targetItem = event.target.closest('.plant-item');
+    targetItem.classList.remove('selected');
+    
+  }
+
+  
+
+  function updateCart(name,price) { 
 
     let newItem = {
-      name : planteName,
-      price : plantePrice,
+      name : name,
+      price : price,
       quantity : 1
     }
 
-    setCart([...cart,newItem]);
+    let itemExist = cart.find((element) => {
 
+      return element.name === newItem.name
+
+    });
+
+    
+    if(itemExist){
+
+      itemExist.quantity += 1;
+
+      setCart([...cart]);
+
+    } else {
+
+      setCart([...cart,newItem]);
+
+    }
+
+  
   }
-
 
 
   return (
@@ -62,7 +88,7 @@ const PlantItem = (props) => {
           <CareScale careType="water" scaleValue={planteWater}/>
           <CareScale careType="light" scaleValue={planteLight}/>
         </div>
-        <button className='btn btn-go add-wish' onClick={() => setCart(cart + 1)}>{wishText}</button>
+        <button className='btn btn-go add-wish'>{wishText}</button>
 
     </article>)
   
