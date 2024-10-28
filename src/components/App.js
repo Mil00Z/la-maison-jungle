@@ -45,10 +45,8 @@ const [cart,setCart] = useState([]);
       <Header/>
       <Block/>
       <Cart cart={cart} setCart={setCart}/>
-      <InfosContent/>
       <ShoppingList cart={cart} setCart={setCart}/>
       <Description/>
-      <UncontroledForm/>
       <ControledForm/>
       <Footer/>
       <FixedBarMarketing/>

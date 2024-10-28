@@ -21,7 +21,7 @@
 }
 
 .block.first {
-  margin-top: 0;
+  margin-block: 0;
   height: 45Vh;
   background-size: cover;
   background-position: 0px 99%;

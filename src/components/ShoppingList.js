@@ -1,28 +1,32 @@
+import { useState } from 'react';
 import { plantList } from '../datas/plantList.js';
 import PlantItem from './PlantItem';
+import Categories from './Categories';
 import "../styles/ShoppingList.css";
-
-let dataListing = [...plantList];
-console.log(dataListing);
 
 
 const ShoppingList = (props) => {
 
   const {cart,setCart} = props;
 
+  const [listing,setListing] = useState([...plantList])
+
   return (
+  <>
+
+    <Categories listing={listing} setListing={setListing}/>
+    
     <section className='shopping-list'>
+      {listing.map((plante,index) => {
 
-    {dataListing.map((plante,index) => {
+        return (<PlantItem key={plante.id} planteName={plante.name} planteCover={plante.cover} plantePrice={plante.price} data-index={index} planteLight={plante.light} planteWater={plante.water} cart={cart} setCart={setCart}/>)
 
-      return (<PlantItem key={plante.id} planteName={plante.name} planteCover={plante.cover} plantePrice={plante.price} data-index={index} planteLight={plante.light} planteWater={plante.water} cart={cart} setCart={setCart}/>)
+        })}
+      </section>
 
-      })}
-      
-    </section>
+    </>
   )
 
-  
 }
 
 export default ShoppingList
