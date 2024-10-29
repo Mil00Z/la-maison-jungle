@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef,useEffect } from 'react';
 
 //Styles
 import '../styles/Cart.css';
@@ -30,6 +30,17 @@ const Cart = (props) => {
   }, 0);
 
   }
+
+
+  useEffect(() => {
+
+    if(totalCart !== 0) {
+
+      document.title = `Panier Actuel : ${totalCart} euros`;
+
+    }
+    
+  },[totalCart])
 
   
   return isOpen ? (<aside className="cart" ref={cartLayout}>
