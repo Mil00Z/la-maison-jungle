@@ -42,6 +42,15 @@ const Cart = (props) => {
     
   },[totalCart])
 
+  useEffect(() => {
+    if (cart.length > 0) {
+      const debugMessage = document.createElement('div');
+      debugMessage.className = 'debeug';
+      debugMessage.textContent = `Nouvel élément ajouté : ${cart[cart.length - 1].name}`;
+      document.body.appendChild(debugMessage);
+    }
+  }, [cart]);
+
   
   return isOpen ? (<aside className="cart" ref={cartLayout}>
           <button className='btn btn-closer' onClick={() => setIsOpen(false)}> ❌ Fermer ❌</button>
