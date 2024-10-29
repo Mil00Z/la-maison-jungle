@@ -1,5 +1,6 @@
 import { plantList } from "../datas/plantList";
 
+//Styles
 import '../styles/Categories.css';
 import '../styles/Block.css'
 
@@ -24,13 +25,18 @@ function filterCategories(inputValue) {
       setListing([...filteredCategories])
 
     } else {
+
+      //voir pour afficher un texte si rien ne match
       setListing([...plantList])
+      
     }
 
 }
 
 function clearCategories() {
+
   setListing([...plantList])  
+
 }
 
 
@@ -41,13 +47,11 @@ function clearCategories() {
           <select name="categories" id="cat" className="btn btn-go" onChange={(e) => filterCategories(e.target.value)}>
           <option value="all" defaultValue={true}>Tout</option>
 
-          {singleCategories.map((categorie,index) =>{
+          {singleCategories.map((categorie,index) => {
 
             return (<option key={`${categorie}-${index}`} value={categorie} className="input-option">
-
-              {categorie}
-
-            </option>)
+                    {categorie}
+                  </option>)
           })}
 
           </select>

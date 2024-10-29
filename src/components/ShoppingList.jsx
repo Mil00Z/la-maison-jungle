@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { plantList } from '../datas/plantList.js';
-import PlantItem from './PlantItem';
-import Categories from './Categories';
+import PlantItem from './PlantItem.jsx';
+import Categories from './Categories.jsx';
 import "../styles/ShoppingList.css";
 
 

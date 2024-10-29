@@ -1,4 +1,6 @@
 import { useState, useRef } from 'react';
+
+//Styles
 import '../styles/Cart.css';
 
 const Cart = (props) => {
