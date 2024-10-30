@@ -16,6 +16,9 @@ const Cart = (props) => {
     return acc + (element.price * element.quantity)
   },0);
 
+  // Check if if its the first render 
+  let firstMount = useRef(true) ;
+
 
   function cleanCart() {
     setCart([]);
@@ -31,26 +34,22 @@ const Cart = (props) => {
 
   }
 
-
   useEffect(() => {
 
-    if(totalCart !== 0) {
+    document.title = `Panier Actuel : ${totalCart} euros`;
 
-      document.title = `Panier Actuel : ${totalCart} euros`;
+   
+  },[totalCart]);
 
-    }
-    
-  },[totalCart])
 
-  useEffect(() => {
-    if (cart.length > 0) {
-      const debugMessage = document.createElement('div');
-      debugMessage.className = 'debeug';
-      debugMessage.textContent = `Nouvel élément ajouté : ${cart[cart.length - 1].name}`;
-      document.body.appendChild(debugMessage);
-    }
-  }, [cart]);
-
+  // useEffect(() => {
+  //   if (cart.length > 0) {
+  //     const debugMessage = document.createElement('div');
+  //     debugMessage.className = 'debeug';
+  //     debugMessage.textContent = `Nouvel élément ajouté : ${cart[cart.length - 1].name}`;
+  //     document.body.appendChild(debugMessage);
+  //   }
+  // }, [cart]);
   
   return isOpen ? (<aside className="cart" ref={cartLayout}>
           <button className='btn btn-closer' onClick={() => setIsOpen(false)}> ❌ Fermer ❌</button>

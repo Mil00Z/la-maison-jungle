@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect} from 'react';
 
 import Header from './Header';
 import Block from './Block';
@@ -19,7 +19,15 @@ import '../styles/App.css';
 function App() {
 
 //Remonter le state Local de Cart to App pour une plus grande diffusion 
-const [cart,setCart] = useState([]);
+const [cart,setCart] = useState(localStorage.getItem('current-cart') ? JSON.parse(localStorage.getItem('current-cart')) : []);
+
+
+useEffect(() => {
+
+  localStorage.setItem('current-cart', JSON.stringify(cart));
+
+},[cart]);
+
 
   return (
     <>
